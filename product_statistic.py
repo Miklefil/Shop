@@ -31,7 +31,7 @@ class Item:
 
     @classmethod
     def instantiate_from_csv(cls, file):
-        with open(file, 'r', encoding='windows-1251') as file:
+        with open(file, 'r', encoding='UTF-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
                 price = row['price']
