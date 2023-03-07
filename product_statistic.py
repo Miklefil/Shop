@@ -16,7 +16,7 @@ class Item:
         return self.__item_name
 
     @item_name.setter
-    def item_name(self, value) -> str:
+    def item_name(self, value) -> None:
         if len(value) > 10:
             print("Exception: наименование товара превышает 10 символов")
         else:
