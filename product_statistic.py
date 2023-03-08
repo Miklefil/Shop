@@ -18,7 +18,7 @@ class Item:
     @item_name.setter
     def item_name(self, value) -> None:
         if len(value) > 10:
-            print("Exception: наименование товара превышает 10 символов")
+            raise Exception("Наименование товара превышает 10 символов")
         else:
             self.__item_name = value
 
@@ -49,3 +49,9 @@ class Item:
     def apply_discount(self):
         self.item_price = self.item_price * self.pay_rate
         return self.item_price
+
+    def __repr__(self):
+        return f'Item({self.__item_name}, {self.item_price}, {self.item_quantity})'
+
+    def __str__(self):
+        return self.__item_name
