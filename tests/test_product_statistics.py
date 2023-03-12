@@ -1,6 +1,7 @@
 import pytest
 import os
 from product_statistic import Item
+from phone_class_func import Phone
 
 
 def test_instantiate_from_csv_length():
@@ -47,3 +48,13 @@ def test_repr(coll):
 
 def test_str(coll):
     assert str(coll) == 'Смартфон'
+
+
+def test_add():
+    item1 = Item("Смартфон", 10000, 5)
+    phone1 = Phone("iPhone 14", 120_000, 5, 2)
+    assert item1 + phone1 == 10
+    assert phone1 + item1 == 10
+
+    with pytest.raises(ValueError):
+        phone1 + 100
