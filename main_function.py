@@ -2,20 +2,8 @@ from product_statistic import*
 from phone_class_func import*
 from mixin_lang_class import MixinLang
 
+Item.instantiate_from_csv('items.csv')
 
-class KeyBoard(MixinLang, Item):
-    pass
-
-
-kb = KeyBoard('Dark Project KD87A', 9600, 5)
-print(kb)
-
-print(kb.language)
-
-kb.change_lang()
-print(kb.language)
-
-kb.language = 'CH'
 
 
 

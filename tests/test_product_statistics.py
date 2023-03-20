@@ -2,9 +2,9 @@ import pytest
 import os
 from product_statistic import Item
 from phone_class_func import Phone
+from exceptions import InstantiateCSVError
 
-
-def test_instantiate_from_csv_length():
+def test_instantiate_from_csv_correct_file():
     Item.instantiate_from_csv(os.path.join('tests', 'test_items.csv'))
     assert len(Item.all_items) == 5
 
@@ -14,6 +14,13 @@ def test_instantiate_from_csv_examples():
     assert item1.item_name == 'Смартфон'
     assert item1.item_price == 100
     assert type(item1.item_price) == int
+
+def test_instantiate_from_csv_corrupted_file():
+    assert Item.instantiate_from_csv('test_items_2.csv') == print('Файл item.csv поврежден')
+
+
+def test_instantiate_from_csv_file_not_found():
+    assert Item.instantiate_from_csv('test_items_3.csv') == print('Отсутствует файл item.csv')
 
 
 @pytest.fixture
