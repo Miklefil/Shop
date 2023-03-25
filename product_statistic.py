@@ -49,7 +49,7 @@ class Item:
                         raise InstantiateCSVError
                     cls(row['name'], price, quantity)
         except FileNotFoundError:
-            print('Отсутствует файл item.csv')
+            print(f'Отсутствует файл {file}')
         except InstantiateCSVError as e:
             print(e)
 

@@ -16,11 +16,11 @@ def test_instantiate_from_csv_examples():
     assert type(item1.item_price) == int
 
 def test_instantiate_from_csv_corrupted_file():
-    assert Item.instantiate_from_csv('test_items_2.csv') == print('Файл item.csv поврежден')
+    assert Item.instantiate_from_csv('test_items_2.csv') == print('Файл test_items_2.csv поврежден')
 
 
 def test_instantiate_from_csv_file_not_found():
-    assert Item.instantiate_from_csv('test_items_3.csv') == print('Отсутствует файл item.csv')
+    assert Item.instantiate_from_csv('test_items_3.csv') == print('Отсутствует файл test_items_3.csv')
 
 
 @pytest.fixture

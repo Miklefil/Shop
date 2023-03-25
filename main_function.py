@@ -2,7 +2,7 @@ from product_statistic import*
 from phone_class_func import*
 from mixin_lang_class import MixinLang
 
-Item.instantiate_from_csv('items.csv')
+
 
 
 
